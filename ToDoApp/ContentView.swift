@@ -12,10 +12,18 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List(TDList) { ToDoList in
-                VStack(alignment: .leading) {
-                    Text(ToDoList.title)
-                    Text(ToDoList.description)
+            List {
+                ForEach(TDList.indices, id: \.self) { index in
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Image(systemName: TDList[index].completed ? "checkmark.square" : "square")
+                                .onTapGesture {
+                                    TDList[index].completed.toggle()
+                                }
+                            Text(TDList[index].title)
+                        }
+                        Text(TDList[index].description)
+                    }
                 }
             }
             .navigationTitle("ToDo List")
