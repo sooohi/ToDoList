@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+xcworkspace/
+
+# Swift
+.swiftpm/
+DerivedData/
+.build/
+
+# Carthage
+/Carthage
+
+# CocoaPods
+/Pods
+/Podfile.lock
+
+# IDE generated files
+*.hmap
+*.ipa
+*.dSYM.zip
+
